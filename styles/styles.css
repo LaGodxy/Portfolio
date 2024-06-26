@@ -1,19 +1,20 @@
-html{
+html {
     scroll-behavior: smooth;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    box-sizing: border-box;
 }
 
 header {
     color: #fff;
-    padding: 10px 0; 
+    padding: 10px 0;
 }
 
 nav {
@@ -31,7 +32,7 @@ nav {
 
 .logo a {
     text-decoration: none;
-    font-size: 44px;
+    font-size: 24px;
     border-radius: 28px;
     background-color: #ba9a9a;
     padding: 8px;
@@ -41,7 +42,7 @@ nav {
 .nav-links {
     list-style: none;
     display: flex;
-    gap:30px;
+    gap: 30px;
     margin-right: 200px;
 }
 
@@ -54,59 +55,53 @@ nav {
     text-decoration: none;
     font-size: 18px;
 }
-.nav-links a:hover{
-    background-color:#adff2f;
+
+.nav-links a:hover {
+    background-color: #adff2f;
     border-radius: 10px;
     padding: 10px;
     text-decoration: overline 3px solid;
 }
 
+#menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
 section {
     text-align: center;
-    height: 200vh;
+    padding: 100px 20px;
 }
 
 .home {
     background-color: burlywood;
-    position: sticky;
-    top:100px;
-    z-index: 2;
     padding: 42px;
 }
-#home{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -500px;
-}
 
-.about-me{
+.about-me {
     background-color: lightgrey;
     padding: 20px;
-    position: sticky;
-    top: 100px;
-    z-index: 4;
-}
-.skills{
-    background-color:burlywood;
-    padding: 20px;
-    position: sticky;
-    top: 100px;
-    z-index: 6;
-} 
-.contact {
-    background-color:antiquewhite;
-    padding: 20px;
-    position: sticky;
-    top: 100px;
-    z-index: 8;
 }
 
+.skills {
+    background-color: burlywood;
+    padding: 20px;
+}
+
+.contact {
+    background-color: antiquewhite;
+    padding: 20px;
+}
 
 .social-links {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .social-links a {
@@ -123,16 +118,8 @@ section {
     margin-right: 10px;
 }
 
-.icon{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-}
-
 h1, h2 {
     margin-bottom: 20px;
-    color: #fff;
 }
 
 ul {
@@ -142,4 +129,47 @@ ul {
 
 ul li {
     margin: 10px 0;
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+        width: 100%;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background-color: lightblue;
+        text-align: center;
+    }
+
+    .nav-links a:hover {
+        background-color: #adff2f;
+        border-radius: 0;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    #menu-toggle:checked + .menu-icon + .nav-links {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
 }
